@@ -73,3 +73,25 @@
 - 运行目录：`workspace/skills/firmware-test-report`
 - 日常修改优先在 `repos/firmware-test-report` 完成
 - 稳定后再同步到 `skills/firmware-test-report`
+
+## 开发者工作流
+
+推荐按下面顺序维护：
+
+1. 在 `repos/firmware-test-report` 修改内容
+2. 本地检查 `SKILL.md` / `README.md` / `references/` 是否符合预期
+3. 执行同步脚本：`scripts/sync-to-skills.ps1`
+4. 确认 `skills/firmware-test-report` 已拿到最新副本
+5. 提交 git
+6. 推送远程
+
+常用命令示例：
+
+```powershell
+cd C:\Users\zhangxincheng\.openclaw\workspace\repos\firmware-test-report
+powershell -ExecutionPolicy Bypass -File .\scripts\sync-to-skills.ps1
+git status
+git add .
+git commit -m "feat: ..."
+git push origin main
+```
