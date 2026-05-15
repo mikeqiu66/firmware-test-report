@@ -150,9 +150,13 @@ description: |
      - 从工时表的"测试者"字段读取
      - 同一天有多个人测试 → 写多个人名(如"田东旭、陈娇兰")
 
-**关联 Skill:** `work-hours-bitable`(路径: `~/.openclaw/skills/work-hours-bitable/SKILL.md`）
-- 该 Skill 定义了标准 11 字段工时表结构
-- 按此结构创建的工时表可被 firmware-test-report 自动读取
+**关联能力说明:** `work-hours-bitable`
+- 当前工作区未确认该 Skill 已安装，**不要硬编码依赖其固定路径**
+- 若 `TOOLS.md` 中已有当前产品的工时表，优先直接读取
+- 若未安装该 Skill 或找不到对应工时表，则改为让使用者：
+  1. 直接提供工时表链接，或
+  2. 手动提供工时信息
+- 只有在运行环境中确认存在该 Skill 时，才引导用户进入对应 Skill 流程
 - 已有工时表列表见 TOOLS.md "工时记录表（按产品）"
 
 **工时记录表 Bitable 字段结构（标准格式）:**
